@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "skill": "molecular-epi-amr",
+  "note": "Routing and boundary cases. Static tests check that each expected reference exists and that each required boundary is stated in the skill; live behaviour still needs a manual run.",
+  "cases": [
+    {
+      "id": "cre_outbreak_snp_cluster",
+      "prompt": "請用 paper-review-zh-tw 審查這篇 CRE 院內群突發的稿件，我們用 cgMLST 和 SNP 距離判定傳播。",
+      "expected_references": ["genomic-epidemiology.md", "amr-phenotype-genotype.md", "reporting-guidelines.md"],
+      "required_boundaries": ["與傳播相符", "沒有通用的 SNP 門檻"]
+    },
+    {
+      "id": "wgs_ast_concordance",
+      "prompt": "Revise the Results section comparing ResFinder predictions with broth microdilution MICs for 300 E. coli isolates.",
+      "expected_references": ["amr-phenotype-genotype.md"],
+      "required_boundaries": ["very major error", "分母"]
+    },
+    {
+      "id": "crab_risk_factor_case_control",
+      "prompt": "幫我改 CRAB 菌血症危險因子的 Methods，對照組是感受性 A. baumannii 菌血症病人。",
+      "expected_references": ["amr-clinical-epidemiology.md"],
+      "required_boundaries": ["高估該類抗生素暴露"]
+    },
+    {
+      "id": "grammar_only_gene_names",
+      "prompt": "只幫我修這段的英文文法，裡面有 blaNDM-1 和 mcr-1。",
+      "expected_references": ["terminology-and-style.md"],
+      "required_boundaries": ["只做文法或用字修改"]
+    },
+    {
+      "id": "out_of_scope_tumour_genomics",
+      "prompt": "Review this manuscript on somatic mutations in colorectal cancer.",
+      "expected_references": [],
+      "required_boundaries": ["腫瘤基因體"]
+    }
+  ]
+}
